@@ -1,0 +1,84 @@
+<html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body><form>
+<table cellpadding=20>
+<tr>
+	<td align=left>
+	<select onchange="myFunction(this.options[this.selectedIndex].id)">
+	<option id=1 value="Черный">Черный</option>
+
+	<option id=2 value="Красный">Красный</option>
+
+	<option id=3 value="Зеленый">Зеленый</option>
+
+	<option id=4 value="Желтый">Желтый</option>
+
+	<option id=5 value="Синий">Синий</option>
+
+	<option id=6 value="Фиолетовый">Фиолетовый</option>
+
+	<option id=7 value="Голубой">Голубой</option>
+
+	<option id=8 value="Белый">Белый</option>
+
+	</select>
+	</td>
+
+	<td align=left>
+		<input type="checkbox" value="Красный" id="red" checked>Красный<br>
+		<input type="checkbox" value="Зеленый" id="green" checked>Зеленый<br>
+		<input type="checkbox" value="Синий" id="blue" checked >Синий<br>
+	</td>
+
+</tr>
+</table>
+</form>
+</body>
+<script>
+function myFunction(n)
+{
+	if (n==1) {
+	document.getElementById('red').checked = true;
+	document.getElementById('green').checked = true;
+	document.getElementById('blue').checked = true;
+	}
+	if (n==2) {
+	document.getElementById('red').checked = true;
+	document.getElementById('green').checked = false;
+	document.getElementById('blue').checked = false;
+	}
+	if (n==3) {
+	document.getElementById('green').checked = true;
+	document.getElementById('red').checked = false;
+	document.getElementById('blue').checked = false;
+	}
+	if (n==4) {
+	document.getElementById('red').checked = true;
+	document.getElementById('green').checked = true;
+	document.getElementById('blue').checked = false;
+	}
+	if (n==5) {
+	document.getElementById('blue').checked = true;
+	document.getElementById('red').checked = false;
+	document.getElementById('green').checked = false;
+	}
+	if (n==6) {
+	document.getElementById('red').checked = true;
+	document.getElementById('blue').checked = true;
+	document.getElementById('green').checked = false;
+	}
+	if (n==7) {
+	document.getElementById('green').checked = true;
+	document.getElementById('blue').checked = true;
+	document.getElementById('red').checked = false;
+	}
+	if (n==8) {
+	document.getElementById('red').checked = true;
+	document.getElementById('green').checked = true;
+	document.getElementById('blue').checked = true;
+	}
+}
+</script>
+</html>

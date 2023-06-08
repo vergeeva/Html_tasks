@@ -1,0 +1,67 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<style>
+.square {
+height: 150px;
+width: 150px;
+background-color: black;
+}
+</style>
+<body><form>
+<div class="square"></div>
+
+<input type="radio" name="radio1" checked id=1 value="Черный"
+onclick= "button1click()">Черный <br>
+<input type="radio" name="radio1" id=2 value="Красный"
+onclick="button2click()">Красный <br>
+<input type="radio" name="radio1" id=3 value="Зеленый"
+onclick="button3click()">Зеленый <br>
+<input type="radio" name="radio1" id=4 value="Желтый"
+onclick="button4click()">Желтый <br>
+<input type="radio" name="radio1" id=5 value="Синий"
+onclick="button5click()">Синий<br>
+<input type="radio" name="radio1" id=6 value="Фиолетовый"
+onclick="button6click()">Фиолетовый<br>
+<input type="radio" name="radio1" id=7 value="Голубой"
+onclick="button7click()">Голубой<br>
+<input type="radio" name="radio1" id=8 value="Белый"
+onclick="button8click()">Белый<br>
+
+
+</form></body>
+<script>
+function button1click()
+{
+document.querySelector('.square').style.background ='black';
+}
+function button2click()
+{
+document.querySelector('.square').style.background='red';
+}
+function button3click()
+{
+document.querySelector('.square').style.background ='green';
+}
+function button4click()
+{
+document.querySelector('.square').style.background ='yellow';
+}
+function button5click()
+{
+document.querySelector('.square').style.background ='#0000ff';
+}
+function button6click()
+{
+document.querySelector('.square').style.background ='purple';
+}
+function button7click()
+{
+document.querySelector('.square').style.background ='#00bfff';
+}
+function button8click()
+{
+document.querySelector('.square').style.background ='white';
+}
+</script>
+</html>

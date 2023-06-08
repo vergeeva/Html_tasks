@@ -1,0 +1,36 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.square {
+height: 150px;
+width: 150px;
+background-color: black;
+}
+</style>
+<body><form>
+<div class="square"></div><br>
+<select onchange="myFunction(this.options[this.selectedIndex].id)">
+<option id=1 value="Черный" selected="selected">Черный</option>
+<option id=2 value="Красный">Красный</option>
+<option id=3 value="Зеленый">Зеленый</option>
+<option id=4 value="Желтый">Желтый</option>
+<option id=5 value="Синий">Синий</option>
+<option id=6 value="Фиолетовый">Фиолетовый</option>
+<option id=7 value="Голубой">Голубой</option>
+<option id=8 value="Белый">Белый</option>
+</select> 
+<script>
+function myFunction(chosen)
+{
+if (chosen==1) {document.querySelector('.square').style.background ='black'};
+if (chosen==2) {document.querySelector('.square').style.background ='red'};
+if (chosen==3) {document.querySelector('.square').style.background ='green'};
+if (chosen==4) {document.querySelector('.square').style.background ='yellow'};
+if (chosen==5) {document.querySelector('.square').style.background ='#0000ff'};
+if (chosen==6) {document.querySelector('.square').style.background ='purple'};
+if (chosen==7) {document.querySelector('.square').style.background ='#00bfff'};
+if (chosen==8) {document.querySelector('.square').style.background ='white'};
+}
+</script>
+</html>

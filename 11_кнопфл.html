@@ -1,0 +1,75 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body><form>
+<table cellpadding=20>
+<tr>
+	<td align=left>
+		<input type="button" value="Черный" onclick="Click(1)" ><br>
+		<input type="button" value="Красный" onclick="Click(2)" ><br>
+		<input type="button" value="Зеленый" onclick="Click(3)" ><br>
+		<input type="button" value="Желтый" onclick="Click(4)" ><br>
+		<input type="button" value="Синий" onclick="Click(5)" ><br>
+		<input type="button" value="Фиолетовый" onclick="Click(6)"><br>
+		<input type="button" value="Голубой" onclick="Click(7)"><br>
+		<input type="button" value="Белый" onclick="Click(8)"><br>
+
+	</select>
+	</td>
+
+	<td align=left>
+		<input type="checkbox" value="Красный" id=1 >Красный<br>
+		<input type="checkbox" value="Зеленый" id=2 >Зеленый<br>
+		<input type="checkbox" value="Синий" id=3  >Синий<br>
+	</td>
+
+</tr>
+</table>
+</form>
+</body>
+<script>
+function Click(n)
+{
+	if (n==1) {
+	document.getElementById('1').checked = true;
+	document.getElementById('2').checked = true;
+	document.getElementById('3').checked = true;	
+	}
+	if (n==2) {
+	document.getElementById('1').checked = true;
+	document.getElementById('2').checked = false;
+	document.getElementById('3').checked = false;
+	}
+	if (n==3) {
+	document.getElementById('2').checked = true;
+	document.getElementById('1').checked = false;
+	document.getElementById('3').checked = false;
+	}
+	if (n==4) {
+	document.getElementById('1').checked = true;
+	document.getElementById('2').checked = true;
+	document.getElementById('3').checked = false;
+	}
+	if (n==5) {
+	document.getElementById('3').checked = true;
+	document.getElementById('1').checked = false;
+	document.getElementById('2').checked = false;
+	}
+	if (n==6) {
+	document.getElementById('1').checked = true;
+	document.getElementById('3').checked = true;
+	document.getElementById('2').checked = false;
+	}
+	if (n==7) {
+	document.getElementById('2').checked = true;
+	document.getElementById('3').checked = true;
+	document.getElementById('1').checked = false;
+	}
+	if (n==8) {
+	document.getElementById('1').checked = true;
+	document.getElementById('2').checked = true;
+	document.getElementById('3').checked = true;
+	}
+}
+</script>
+</html>

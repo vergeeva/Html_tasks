@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+</head>
+<style>
+.square {
+width: 150px;
+height:150px;
+background: red;
+}
+</style>
+<body>
+<form>
+<div class = "square"></div>
+
+<input type="checkbox" value="Красный" id=1 checked onclick="button1click()">Красный<br>
+<input type="checkbox" value="Зеленый" id=2 onclick="button2click()">Зеленый<br>
+<input type="checkbox" value="Синий" id=3 onclick="button3click()">Синий<br>
+
+</form>
+</body>
+<script>
+function button1click() {
+document.querySelector(".square").style.background = 'red';
+document.getElementById('2').checked = false;
+document.getElementById('3').checked = false;
+}
+
+function button2click() {
+document.querySelector(".square").style.background = 'green';
+document.getElementById('1').checked = false;
+document.getElementById('3').checked = false;
+}
+function button3click() {
+document.querySelector(".square").style.background = 'blue';
+document.getElementById('1').checked = false;
+document.getElementById('2').checked = false;
+}
+</script>
+</html>

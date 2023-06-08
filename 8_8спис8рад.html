@@ -1,0 +1,56 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body><form>
+<table cellpadding=20>
+<tr>
+	<td align=left>
+	<select onchange="myFunction(this.options[this.selectedIndex].id)">
+	<option id=1 value="Черный">Черный</option>
+
+	<option id=2 value="Красный">Красный</option>
+
+	<option id=3 value="Зеленый">Зеленый</option>
+
+	<option id=4 value="Желтый">Желтый</option>
+
+	<option id=5 value="Синий">Синий</option>
+
+	<option id=6 value="Фиолетовый">Фиолетовый</option>
+
+	<option id=7 value="Голубой">Голубой</option>
+
+	<option id=8 value="Белый">Белый</option>
+
+	</select>
+	</td>
+
+	<td align=left>
+		<input type="radio" name="radio1" id="black" checked value="Черный">Черный <br>
+		<input type="radio" name="radio1" id="red" value="Красный">Красный <br>
+		<input type="radio" name="radio1" id="green" value="Зеленый">Зеленый <br>
+		<input type="radio" name="radio1" id="yellow" value="Желтый">Желтый <br>
+		<input type="radio" name="radio1" id="blue" value="Синий">Синий<br>
+		<input type="radio" name="radio1" id="purple" value="Фиолетовый">Фиолетовый<br>
+		<input type="radio" name="radio1" id="lightblue" value="Голубой">Голубой<br>
+		<input type="radio" name="radio1" id="white" value="Белый">Белый<br>
+	</td>
+
+</tr>
+</table>
+</form>
+</body>
+<script>
+function myFunction(n)
+{
+	if (n==1) {document.getElementById('black').checked = true};
+	if (n==2) {document.getElementById('red').checked = true};
+	if (n==3) {document.getElementById('green').checked = true};
+	if (n==4) {document.getElementById('yellow').checked = true};
+	if (n==5) {document.getElementById('blue').checked = true};
+	if (n==6) {document.getElementById('purple').checked = true};
+	if (n==7) {document.getElementById('lightblue').checked = true};
+	if (n==8) {document.getElementById('white').checked = true};
+}
+</script>
+</html>

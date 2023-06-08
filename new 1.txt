@@ -1,0 +1,481 @@
+Как создаются:
+1. квадрат
+2. флаги
+3. радиокнопка
+4. кнопка
+5. выпадающий список
+
+1. квадрат
+<div style="width:150px;height:150px;background:black" id="example"></div>
+2. флаги
+
+		<input type="checkbox" value="Красный" id=1 >Красный<br>
+		<input type="checkbox" value="Зеленый" id=2 >Зеленый<br>
+		<input type="checkbox" value="Синий" id=3  >Синий<br>
+
+3. радиокнопка
+
+		<td align=left>
+		<input type="radio" name="radio1" checked value="Черный"
+		onclick= "button1click()">Черный <br>
+		<input type="radio" name="radio1" value="Красный"
+		onclick="button2click()">Красный <br>
+		<input type="radio" name="radio1" value="Зеленый"
+		onclick="button3click()">Зеленый <br>
+		<input type="radio" name="radio1" value="Желтый"
+		onclick="button4click()">Желтый <br>
+		<input type="radio" name="radio1" value="Синий"
+		onclick="button5click()">Синий<br>
+		<input type="radio" name="radio1" value="Фиолетовый"
+		onclick="button6click()">Фиолетовый<br>
+		<input type="radio" name="radio1" value="Голубой"
+		onclick="button7click()">Голубой<br>
+		<input type="radio" name="radio1" value="Белый"
+		onclick="button8click()">Белый<br>
+		 </td>
+
+4. кнопка
+
+	<td align=left>
+		<input type="button" value="Черный" onclick="Click(1)" ><br>
+		<input type="button" value="Красный" onclick="Click(2)" ><br>
+		<input type="button" value="Зеленый" onclick="Click(3)" ><br>
+		<input type="button" value="Желтый" onclick="Click(4)" ><br>
+		<input type="button" value="Синий" onclick="Click(5)" ><br>
+		<input type="button" value="Фиолетовый" onclick="Click(6)"><br>
+		<input type="button" value="Голубой" onclick="Click(7)"><br>
+		<input type="button" value="Белый" onclick="Click(8)"><br>
+
+	</select>
+	</td>
+
+5. выпадающий список
+
+	<select>
+		<option id=1 value="Черный">Черный</option>
+
+		<option id=2 value="Красный">Красный</option>
+
+		<option id=3 value="Зеленый">Зеленый</option>
+
+		<option id=4 value="Желтый">Желтый</option>
+
+		<option id=5 value="Синий">Синий</option>
+
+		<option id=6 value="Фиолетовый">Фиолетовый</option>
+
+		<option id=7 value="Голубой">Голубой</option>
+
+		<option id=8 value="Белый">Белый</option>
+
+	</select>
+
+
+Как обработать события:
+Задача 1. при нажатии на радиокнопку, окрасит div в соответствующий цвет.
+		<script>
+		function button1click()
+		{
+		document.querySelector('.square').style.background ='black';
+		}
+		function button2click()
+		{
+		document.querySelector('.square').style.background='red';
+		}
+		function button3click()
+		{
+		document.querySelector('.square').style.background ='green';
+		}
+		function button4click()
+		{
+		document.querySelector('.square').style.background ='yellow';
+		}
+		function button5click()
+		{
+		document.querySelector('.square').style.background ='#0000ff';
+		}
+		function button6click()
+		{
+		document.querySelector('.square').style.background ='purple';
+		}
+		function button7click()
+		{
+		document.querySelector('.square').style.background ='#00bfff';
+		}
+		function button8click()
+		{
+		document.querySelector('.square').style.background ='white';
+		}
+		</script>
+		
+Задача 2. при выборе комбинации флажков, окрасит div в соответствующий цвет.
+
+		<script>
+		function button1click() {
+		document.querySelector(".square").style.background = 'red';
+		document.getElementById('2').checked = false;
+		document.getElementById('3').checked = false;
+		}
+
+		function button2click() {
+		document.querySelector(".square").style.background = 'green';
+		document.getElementById('1').checked = false;
+		document.getElementById('3').checked = false;
+		}
+		function button3click() {
+		document.querySelector(".square").style.background = 'blue';
+		document.getElementById('1').checked = false;
+		document.getElementById('2').checked = false;
+		}
+		</script>
+
+Задача 3. при выборе цвета в списке окрасит div в соответствующий цвет.
+
+		<script>
+		function myFunction(chosen)
+		{
+		if (chosen==1) {document.querySelector('.square').style.background ='black'};
+		if (chosen==2) {document.querySelector('.square').style.background ='red'};
+		if (chosen==3) {document.querySelector('.square').style.background ='green'};
+		if (chosen==4) {document.querySelector('.square').style.background ='yellow'};
+		if (chosen==5) {document.querySelector('.square').style.background ='#0000ff'};
+		if (chosen==6) {document.querySelector('.square').style.background ='purple'};
+		if (chosen==7) {document.querySelector('.square').style.background ='#00bfff'};
+		if (chosen==8) {document.querySelector('.square').style.background ='white'};
+		}
+		</script>
+
+Задача 4. при нажатии на радиокнопку переключает флажки в соответствующие цвета. Примечание: черный – все флажки включены, желтый – красный+зеленый, фиолетовый – красный+синий, голубой – зеленый+синий, белый – все флажки включены.
+
+		<script>
+		function button1click()
+		{
+		document.getElementById('1').checked = true;
+		document.getElementById('2').checked = true;
+		document.getElementById('3').checked = true;
+		}
+		function button2click()
+		{
+		document.getElementById('1').checked = true;
+		document.getElementById('2').checked = false;
+		document.getElementById('3').checked = false;
+		}
+		function button3click()
+		{
+		document.getElementById('1').checked = false;
+		document.getElementById('2').checked = true;
+		document.getElementById('3').checked = false;
+		}
+		function button4click()
+		{
+		document.getElementById('1').checked = true;
+		document.getElementById('2').checked = true;
+		document.getElementById('3').checked = false;
+		}
+		function button5click()
+		{
+		document.getElementById('1').checked = false;
+		document.getElementById('2').checked = false;
+		document.getElementById('3').checked = true;
+		}
+		function button6click()
+		{
+		document.getElementById('1').checked = true;
+		document.getElementById('2').checked = false;
+		document.getElementById('3').checked = true;
+		}
+		function button7click()
+		{
+		document.getElementById('1').checked = false;
+		document.getElementById('2').checked = true;
+		document.getElementById('3').checked = true;
+		}
+		function button8click()
+		{
+		document.getElementById('1').checked = true;
+		document.getElementById('2').checked = true;
+		document.getElementById('3').checked = true;
+		}
+		</script>
+
+Задача 5. при нажатии на радиокнопку переключит поле со списком в соответствующий текст.
+
+		<script>
+		function button1click()
+		{
+		document.getElementById('1').selected = "select";
+		}
+		function button2click()
+		{
+		document.getElementById('2').selected = "select";
+		}
+		function button3click()
+		{
+		document.getElementById('3').selected = "select";
+		}
+		function button4click()
+		{
+		document.getElementById('4').selected = "select";
+		}
+		function button5click()
+		{
+		document.getElementById('5').selected = "select";
+		}
+		function button6click()
+		{
+		document.getElementById('6').selected = "select";
+		}
+		function button7click()
+		{
+		document.getElementById('7').selected = "select";
+		}
+		function button8click()
+		{
+		document.getElementById('8').selected = "select";
+		}
+		</script>
+
+Задача 6. при выборе комбинации флажков, изменяет активную радиокнопку.
+
+		function change()
+		{
+		if ((document.getElementById('1').checked === true)&& (document.getElementById('2').checked === false)
+		&& (document.getElementById('3').checked === false)) {
+				document.getElementById('red').checked = true;
+			}
+
+		if ((document.getElementById('1').checked == false)&& (document.getElementById('2').checked == true)
+		&& (document.getElementById('3').checked == false)) {
+				document.getElementById('green').checked = true;
+			}
+
+		if ((document.getElementById('1').checked == false)&& (document.getElementById('2').checked == false)
+		&& (document.getElementById('3').checked == true)) {
+				document.getElementById('blue').checked = true;
+			}
+
+		if ((document.getElementById('1').checked == true)&& (document.getElementById('2').checked == true)
+		&& (document.getElementById('3').checked == false)) {
+				document.getElementById('yellow').checked = true;
+			}
+
+		if ((document.getElementById('1').checked == true)&& (document.getElementById('2').checked == false)
+		&& (document.getElementById('3').checked == true)) {
+				document.getElementById('purple').checked = true;
+			}
+
+		if ((document.getElementById('1').checked == false)&& (document.getElementById('2').checked == true)
+		&& (document.getElementById('3').checked == true)) {
+				document.getElementById('lightblue').checked = true;
+			}
+
+		if ((document.getElementById('1').checked == true)&& (document.getElementById('2').checked == true)
+		&& (document.getElementById('3').checked == true)) {
+				document.getElementById('black').checked = true;
+			}
+
+		if ((document.getElementById('1').checked == false)&& (document.getElementById('2').checked == false)
+		&& (document.getElementById('3').checked == false)) {
+				document.getElementById('white').checked = true;
+			}
+		}
+		</script>
+
+Задача 7. при выборе комбинации флажков, изменяет текст поля со списком. Примечание: черный – все флажки включены, желтый – красный+зеленый, фиолетовый – красный+синий, голубой – зеленый+синий, белый – все флажки включены.
+
+		<script>
+		function change()
+		{
+		if ((document.getElementById('1').checked === true)&& (document.getElementById('2').checked === false)
+		&& (document.getElementById('3').checked === false)) {
+				document.getElementById('red').selected = "select";
+			}
+
+		if ((document.getElementById('1').checked == false)&& (document.getElementById('2').checked == true)
+		&& (document.getElementById('3').checked == false)) {
+				document.getElementById('green').selected = "select";
+			}
+
+		if ((document.getElementById('1').checked == false)&& (document.getElementById('2').checked == false)
+		&& (document.getElementById('3').checked == true)) {
+				document.getElementById('blue').selected = "select";
+			}
+
+		if ((document.getElementById('1').checked == true)&& (document.getElementById('2').checked == true)
+		&& (document.getElementById('3').checked == false)) {
+				document.getElementById('yellow').selected = "select";
+			}
+
+		if ((document.getElementById('1').checked == true)&& (document.getElementById('2').checked == false)
+		&& (document.getElementById('3').checked == true)) {
+				document.getElementById('purple').selected = "select";
+			}
+
+		if ((document.getElementById('1').checked == false)&& (document.getElementById('2').checked == true)
+		&& (document.getElementById('3').checked == true)) {
+				document.getElementById('lightblue').selected = "select";
+			}
+
+		if ((document.getElementById('1').checked == true)&& (document.getElementById('2').checked == true)
+		&& (document.getElementById('3').checked == true)) {
+				document.getElementById('yellow').selected = "select";
+			}
+
+		if ((document.getElementById('1').checked == true)&& (document.getElementById('2').checked == true)
+		&& (document.getElementById('3').checked == true)) {
+				document.getElementById('black').selected = "select";
+			}
+			if ((document.getElementById('1').checked == false)&& (document.getElementById('2').checked == false)
+		&& (document.getElementById('3').checked == false)) {
+				document.getElementById('white').selected = "select";
+			}
+		}
+		</script>
+
+Задача 8. при выборе цвета в поле ввода(поле со списком) изменяет активную радиокнопку.
+
+		<script>
+		function myFunction(n)
+		{
+			if (n==1) {document.getElementById('black').checked = true};
+			if (n==2) {document.getElementById('red').checked = true};
+			if (n==3) {document.getElementById('green').checked = true};
+			if (n==4) {document.getElementById('yellow').checked = true};
+			if (n==5) {document.getElementById('blue').checked = true};
+			if (n==6) {document.getElementById('purple').checked = true};
+			if (n==7) {document.getElementById('lightblue').checked = true};
+			if (n==8) {document.getElementById('white').checked = true};
+		}
+		</script>
+
+Задача 9. при выборе цвета в поле ввода переключает флажки в соответствующие цвета.
+
+	<script>
+	function myFunction(n)
+	{
+		if (n==1) {
+		document.getElementById('red').checked = true;
+		document.getElementById('green').checked = true;
+		document.getElementById('blue').checked = true;
+		}
+		if (n==2) {
+		document.getElementById('red').checked = true;
+		document.getElementById('green').checked = false;
+		document.getElementById('blue').checked = false;
+		}
+		if (n==3) {
+		document.getElementById('green').checked = true;
+		document.getElementById('red').checked = false;
+		document.getElementById('blue').checked = false;
+		}
+		if (n==4) {
+		document.getElementById('red').checked = true;
+		document.getElementById('green').checked = true;
+		document.getElementById('blue').checked = false;
+		}
+		if (n==5) {
+		document.getElementById('blue').checked = true;
+		document.getElementById('red').checked = false;
+		document.getElementById('green').checked = false;
+		}
+		if (n==6) {
+		document.getElementById('red').checked = true;
+		document.getElementById('blue').checked = true;
+		document.getElementById('green').checked = false;
+		}
+		if (n==7) {
+		document.getElementById('green').checked = true;
+		document.getElementById('blue').checked = true;
+		document.getElementById('red').checked = false;
+		}
+		if (n==8) {
+		document.getElementById('red').checked = true;
+		document.getElementById('green').checked = true;
+		document.getElementById('blue').checked = true;
+		}
+	}
+	</script>
+
+Задача 10. кнопка и выпадающий список
+
+	<script>
+	function Click(n)
+	{
+		if (n==1) {
+		document.getElementById('1').selected = "select";
+		}
+		if (n==2) {
+		document.getElementById('2').selected = "select";
+		}
+		if (n==3) {
+		document.getElementById('3').selected = "select";
+		}
+		if (n==4) {
+		document.getElementById('4').selected = "select";
+		}
+		if (n==5) {
+		document.getElementById('5').selected = "select";
+		}
+		if (n==6) {
+		document.getElementById('6').selected = "select";
+		}
+		if (n==7) {
+		document.getElementById('7').selected = "select";
+		}
+		if (n==8) {
+		document.getElementById('8').selected = "select";
+		}
+	}
+	</script>
+
+Задача 11. кнопка и флаги
+
+	<script>
+	function Click(n)
+	{
+		if (n==1) {
+		document.getElementById('1').checked = true;
+		document.getElementById('2').checked = true;
+		document.getElementById('3').checked = true;	
+		}
+		if (n==2) {
+		document.getElementById('1').checked = true;
+		document.getElementById('2').checked = false;
+		document.getElementById('3').checked = false;
+		}
+		if (n==3) {
+		document.getElementById('2').checked = true;
+		document.getElementById('1').checked = false;
+		document.getElementById('3').checked = false;
+		}
+		if (n==4) {
+		document.getElementById('1').checked = true;
+		document.getElementById('2').checked = true;
+		document.getElementById('3').checked = false;
+		}
+		if (n==5) {
+		document.getElementById('3').checked = true;
+		document.getElementById('1').checked = false;
+		document.getElementById('2').checked = false;
+		}
+		if (n==6) {
+		document.getElementById('1').checked = true;
+		document.getElementById('3').checked = true;
+		document.getElementById('2').checked = false;
+		}
+		if (n==7) {
+		document.getElementById('2').checked = true;
+		document.getElementById('3').checked = true;
+		document.getElementById('1').checked = false;
+		}
+		if (n==8) {
+		document.getElementById('1').checked = true;
+		document.getElementById('2').checked = true;
+		document.getElementById('3').checked = true;
+		}
+	}
+	</script>
+
+
+
+
